@@ -1,0 +1,21 @@
+<form class="example-form" [formGroup]="formGroup" class="container-center">
+  <div class="example-container">
+    <mat-form-field class="nome-width">
+      <mat-label>Valor</mat-label>
+      <input type="number" matInput formControlName="valor" placeholder="Valor">
+    </mat-form-field>
+    <mat-form-field class="nome-width">
+      <mat-label>Quantidade de meses</mat-label>
+      <input type="number" matInput formControlName="quantidadeMeses" placeholder="Quantidade de Meses">
+    </mat-form-field>
+    <button mat-flat-button color="primary" (click)="onSubmit(formGroup.value)" [disabled]="!formGroup.valid"
+      style="height: 57px; margin-bottom: 20px;">Calcular</button>
+  </div>
+</form>
+
+<div *ngIf="valorBruto > 0" class="container-center" style="color:red">
+  <span colo>Valor Bruto: {{valorBruto}}</span>
+</div>
+<div *ngIf="valorLiquido > 0" class="container-center" style="color:red">
+  <span>Valor Líquido: {{valorLiquido}}</span>
+</div>
